@@ -38,6 +38,10 @@
         <%= button_to t("logout"), session_path, method: :delete if authenticated? %>
         <%= link_to t("login"), new_session_path unless authenticated? %>
     </header>
-    <main><%= yield %></main>
+    <main>
+      <div class="notice"> <%= flash[:notice] %> </div>
+      <div class="alert"> <%= flash[:alert] %> </div>
+      <%= yield %>
+    </main>
   </body>
 </html>

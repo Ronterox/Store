@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_08_005337) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_08_021144) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_08_005337) do
 
   create_table "products", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.integer "inventory_count", default: 0
     t.string "name"
     t.datetime "updated_at", null: false
   end
@@ -64,6 +65,14 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_08_005337) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "subscribers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.integer "product_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_subscribers_on_product_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "email_address", null: false
@@ -75,4 +84,5 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_08_005337) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "sessions", "users"
+  add_foreign_key "subscribers", "products"
 end

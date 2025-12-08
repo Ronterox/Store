@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "subscribers/create"
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -11,7 +12,9 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  resources :products
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end
 
   root "products#index"
 end
