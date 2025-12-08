@@ -1,0 +1,8 @@
+<%= form_with model: product do |form| %>
+  <% if form.object.errors.any? %>
+    <p class="error"><%= form.object.errors.full_messages.first %></p>
+  <% end %>
+
+  <div><%= form.label :name %><%= form.text_field :name %></div>
+  <div><%= form.submit %></div>
+<% end %>
