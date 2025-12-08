@@ -1,0 +1,5 @@
+[12/08 01:40:59] I read the tutorial
+[12/08 01:41:12] Try to do what it means to do
+[12/08 01:41:18] see how is actually done
+[12/08 01:41:24] reimplement as necessary
+[12/08 01:41:30] fun iteration

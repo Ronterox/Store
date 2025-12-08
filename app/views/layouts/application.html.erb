@@ -34,10 +34,9 @@
   <body>
     <header>
       <nav>
-        <h1><%= link_to "Store", root_path %></h1>
-        <ul>
-          <li><%= link_to "Products", products_path %></li>
-        </ul>
+        <h1><%= link_to t("store"), root_path %></h1>
+        <%= button_to t("logout"), session_path, method: :delete if authenticated? %>
+        <%= link_to t("login"), new_session_path unless authenticated? %>
     </header>
     <main><%= yield %></main>
   </body>

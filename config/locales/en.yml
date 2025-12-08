@@ -28,4 +28,31 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  store: "Store"
+  logout: "Logout"
+  login: "Login"
+  new_product: "New Product"
+  cancel: "Cancel"
+  products:
+    index:
+      title: "Products"
+    show:
+      edit: "Edit"
+      back: "Back"
+      destroy: "Delete"
+      are_you_sure: "Are you sure?"
+
+es:
+  store: "Tienda"
+  logout: "Cerrar Sesión"
+  login: "Iniciar Sesión"
+  new_product: "Nuevo Producto"
+  cancel: "Cancelar"
+  products:
+    index:
+      title: "Productos"
+    show:
+      edit: "Editar"
+      back: "Atrás"
+      destroy: "Borrar"
+      are_you_sure: "¿Estás seguro?"

@@ -1,9 +1,9 @@
-<h1>Products</h1>
-
-<%= link_to "New Product", new_product_path %>
+<h1><%= t ".title" %></h1>
 
 <ul id="products">
   <% @products.each do |product| %>
     <li><%= link_to product.name, product %></li>
   <% end %>
 </ul>
+
+<%= link_to t("new_product"), new_product_path if authenticated? %>
