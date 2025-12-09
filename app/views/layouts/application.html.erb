@@ -21,10 +21,7 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
-    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" >
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
@@ -34,9 +31,11 @@
   <body>
     <header>
       <nav>
-        <h1><%= link_to t("store"), root_path %></h1>
-        <%= button_to t("logout"), session_path, method: :delete if authenticated? %>
-        <%= link_to t("login"), new_session_path unless authenticated? %>
+        <ul><li><strong><%= link_to t("store"), root_path %></strong></li></ul>
+        <ul>
+          <li><%= button_to t("logout"), session_path, method: :delete if authenticated? %></li>
+          <li><%= link_to t("login"), new_session_path unless authenticated? %></li>
+        </ul>
     </header>
     <main>
       <div class="notice"> <%= flash[:notice] %> </div>

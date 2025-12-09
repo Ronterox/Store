@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "subscribers/create"
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :subscribers, only: [ :create ]
   end
+  resources :unsubscribe, only: [ :show ], param: :token
 
   root "products#index"
 end
